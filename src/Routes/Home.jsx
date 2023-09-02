@@ -5,7 +5,6 @@ import Homepage from '../HomePage/Homepage'
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <Homepage />
     </div>
   )

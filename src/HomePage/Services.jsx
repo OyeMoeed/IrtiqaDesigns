@@ -1,55 +1,90 @@
-import React from 'react'
+
+import React, { useEffect, useRef } from 'react'
+import { Button, Card, CardActions, CardContent, CardMedia,  Typography } from '@mui/material'
 import services from '../assets/services.jpeg'
-import mep from '../assets/mep.jpeg'
-import about from '../assets/about.jpeg'
+import {motion, useAnimation, useInView} from 'framer-motion'
+import { Link } from 'react-router-dom'
 
- const Services = () => {
-    
+
+const Services = () => {
+const ref = useRef(null)
+
+const isInView= useInView(ref,{once:true})
+const main = useAnimation()
+
+useEffect(()=>{
+  if (isInView) {
+    main.start('visible')
+ } }, [isInView, main])
+
   return (
-    <div>
-       <div className='max-w-[1400px] mx-auto h-[20em] lg:mt-[123em] mt-[140em] flex flex-col items-center justify-evenly text-center'>
-      <div className='flex lg:flex-row flex-col items-center lg:space-x-[4em] lg:mt-0 mt-[em] '>
-      <div className="card w-96 bg-base-100 mr-[2em]">
-  <figure className="pb-3">
-    <img src={services} alt='/'/>
-  </figure>
-  <div className="card-body items-center text-left pl-5 ">
-    <h2 className="card-title font-semibold text-[1.5em]">View Our Services</h2>
-    <div className='card-actions'>
-    <button className='py-3'>Learn More</button>
-    </div>
-    
-  </div>
-</div> 
+    <div ref={ref} className='max-w-screen mx-auto '> 
+    <div 
+    className='overflow-hidden absolute top-[108em]'>
+    <motion.div 
+    variants={{
+      hidden: {opacity:0, y:75},
+      visible: {opacity:1, y:0}
+    }}
+    initial='hidden'
+    animate={main}
+    transition={{duration:1, delay:0.2}}
+    className='max-w-screen mx-auto px-[30em] '>
+      <div className=' pt-[3em] flex flex-row space-x-[3em]'>
 
-<div className="card w-96 bg-base-100 mr-[2em]">
-  <figure className="pb-3">
-    <img src={about} alt='/'/>
-  </figure>
-  <div className="card-body items-center text-left pl-5 ">
-    <h2 className="card-title font-semibold text-[1.5em]">Know More About Us</h2>
-    <div className='card-actions'>
-    <button className='py-3'>Learn More</button>
+        <Card sx={{maxWidth:300, maxHeight:330}} className='drop-shadow-2xl'>
+          <CardMedia
+          component='img'
+          alt='/'
+          src={services}
+          />
+          <CardContent>
+          <Typography gutterBottom variant='h5' component='div'>
+            View Our Serices
+          </Typography>
+          </CardContent>
+          <CardActions>
+          <Button size='small'><Link to='/Services'>View More</Link></Button>
+          </CardActions>
+        </Card>
+        <Card sx={{maxWidth:300, maxHeight:330}} className='drop-shadow-2xl'>
+          <CardMedia
+          component='img'
+          alt='/'
+          height='140'
+          src={services}
+          />
+          <CardContent>
+          <Typography gutterBottom variant='h5' component='div'>
+            View Our Serices
+          </Typography>
+          </CardContent>
+          <CardActions>
+          <Button size='small'><Link to='/Services'>View More</Link></Button>
+          </CardActions>
+        </Card>
+        <Card sx={{maxWidth:300, maxHeight:330}} className='drop-shadow-2xl'>
+          <CardMedia
+          component='img'
+          alt='/'
+          height='140'
+          src={services}
+          />
+          <CardContent>
+          <Typography gutterBottom variant='h5' component='div'>
+            View Our Serices
+          </Typography>
+          </CardContent>
+          <CardActions>
+          <Button size='small'><Link to='/Services'>View More</Link></Button>
+          </CardActions>
+        </Card>
+        </div>
+    </motion.div>
     </div>
-    
-  </div>
-</div> 
-<div  className="card w-96 bg-base-100 mr-[2em]">
-  <figure className="pb-3">
-    <img src={mep} alt='/'/>
-  </figure>
-  <div className="card-body items-center text-left pl-5">
-    <h2 className="card-title font-semibold text-[1.5em]">Meet Our Team</h2>
-    <div className='card-actions'>
-    <button className='py-3'>Learn More</button>
     </div>
-    
-  </div>
-</div>     
- </div>
-    </div>
-    </div>
+
   )
 }
- 
+
 export default Services

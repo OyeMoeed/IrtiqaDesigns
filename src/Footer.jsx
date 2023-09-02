@@ -3,9 +3,8 @@ import bg from './assets/footerbg.mp4'
 
 const Footer = () => {
   return (
-    <div className='w-full mx-[auto] h-[30em] mt-[30em]  text-white'>
-        <video src={bg} autoPlay muted loop className='absolute top-[180em] w-screen z-[-99]' />
-        <div className='max-w-[1400px] mx-auto pt-[11em] border-b'>
+        
+        <div className='max-w-screen relative mx-auto mt-[5em] pt-[7em] border-b text-white'>
         <div className='flex felx-row justify-around'>
         <ul className='space-y-4'>
             <li className='font-bold text-[1.1em]'>More From Our Company</li>
@@ -45,9 +44,11 @@ const Footer = () => {
 </div>
 </div>
 </div>
+<div className='absolute top-0 z-[-99]'>
+<video src={bg} autoPlay muted loop className='w-screen' />
+</div>
 </div>
       
-    </div>
   )
 }
 

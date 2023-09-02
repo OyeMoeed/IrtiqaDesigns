@@ -43,11 +43,11 @@ const Navbar = () => {
     }
 
   return (
-    <nav className=' max-w-[1400px] mx-auto text-white'>
+    <nav className='sticky max-w-screen mx-auto px-[2em] z-[9999] text-black'>
        <div>
             <div className='flex flex-row items-center justify-between h-[5em]'>
             <Link to='/'>
-            <h1 className='text-[2em]'>Logo</h1>
+            <h1 className='text-[2em] text-white'>Logo</h1>
              </Link>
             <div className='lg:flex lg:flex-row lg:flex-end hidden '>
               <div className='flex flex-row '>
@@ -59,7 +59,7 @@ const Navbar = () => {
                <motion.li whileHover={{scale:1.2}} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}> <Link to='/About'>About Us 
               {dropdown && <AboutDropDown />}
                </Link> </motion.li>
-                <motion.li whileHover={{scale:1.2}} onMouseEnter={onSMouseEnter} onMouseLeave={onSMouseLeave}><Link to='/Services'>Services</Link>
+                <motion.li className='h-full' whileHover={{scale:1.2}} onMouseEnter={onSMouseEnter} onMouseLeave={onSMouseLeave}><Link to='/Services'>Services</Link>
                 {servicesdropdown && <ServicesDropDown />} </motion.li>
                <motion.li whileHover={{scale:1.2}}> <Link to='/Where To Find Us'> Where To Find Us</Link></motion.li>
         

@@ -1,38 +1,11 @@
 export const AboutMenu = [
-{
-  title: 'Our Company',
-  path: '/ourCompany',
-  cName: 'block w-[20em]'
-
-},{
-  title: 'Our Team',
-  path: '/ourTeam',
-  cName: 'block w-[10em]'
-}
-]
-
-export const Services = [
   {
-    title: 'Architetcture Design',
+    title: 'Our Company',
     path: '/ourCompany',
-    cName: 'block w-[20em]'
+    cName: 'block w-[10em]'
   
   },{
-    title: 'Interior Design and Modeling',
-    path: '/ourTeam',
-    cName: 'block w-[10em]'
-  },{
-    title: 'Structural Design and Consultation',
-    path: '/ourCompany',
-    cName: 'block w-[20em]'
-  
-  },{
-    title: 'Civil Construction and Works',
-    path: '/ourTeam',
-    cName: 'block w-[10em]'
-  }
-  ,{
-    title: 'Engineering Consultancy',
+    title: 'Our Team',
     path: '/ourTeam',
     cName: 'block w-[10em]'
   }
